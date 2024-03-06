@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
@@ -233,3 +234,9 @@ Route::view('/blade/lacos/while', 'blade/lacos/while');
 Route::get('/blog', function(){
     return view('blog/home');
 });
+
+Route::get('/blog/artigos', function(){
+    return view('blog/artigos');
+});
+
+Route::resource('/blog/artigos', ArticlesController::class);
